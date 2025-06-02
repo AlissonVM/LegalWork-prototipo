@@ -11,27 +11,48 @@
       margin: 0;
       background: #f4f4f4;
       color: #333;
+      font-size: 16px; /* Tamaño de letra base para todo el cuerpo */
     }
     header, footer {
       background-color: #004080;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 1rem; /* Aumenta el padding para más espacio */
+    }
+    header h1 {
+      font-size: 2.8em; /* Tamaño de letra para el título principal */
+      margin-bottom: 0.5rem; /* Espacio debajo del título */
+    }
+    header p {
+      font-size: 1.2em; /* Tamaño de letra para el subtítulo */
+    }
+    footer p {
+      font-size: 1em; /* Tamaño de letra para el texto del footer */
     }
     main {
       padding: 2rem;
     }
     .section {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem; /* Un poco más de margen inferior */
+    }
+    h2 {
+      font-size: 2em; /* Tamaño para los títulos de sección (Menú Principal) */
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-size: 1.7em; /* Tamaño para los subtítulos dentro de las secciones (Chat Legal, Simulador, etc.) */
+      margin-bottom: 1rem;
     }
     .btn {
       background-color: #007BFF;
       color: white;
       border: none;
-      padding: 1rem;
-      margin: 0.5rem;
+      padding: 1rem 1.5rem; /* Aumenta el padding para botones */
+      margin: 0.7rem; /* Un poco más de margen entre botones */
       cursor: pointer;
       border-radius: 8px;
+      font-size: 1.1em; /* Tamaño de letra para los botones */
+      transition: background-color 0.3s ease; /* Transición suave para el hover */
     }
     .btn:hover {
       background-color: #0056b3;
@@ -39,16 +60,52 @@
     .chat-box, .simulador, .modelos, .premium {
       display: none;
       background: white;
-      padding: 1rem;
+      padding: 2rem; /* Aumenta el padding para las cajas de contenido */
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra un poco más pronunciada */
+      line-height: 1.6; /* Mejora la legibilidad del texto aumentando el interlineado */
+    }
+    .chat-box p, .modelos li, .premium p, .premium ul {
+      font-size: 1.1em; /* Tamaño de letra para el contenido de texto */
+      margin-bottom: 0.8rem;
+    }
+    .chat-box strong {
+        font-size: 1.05em; /* Ligeramente más grande para el texto en negrita */
     }
     .input {
-      margin: 0.5rem 0;
+      margin-bottom: 1.2rem; /* Espacio entre los campos de entrada */
+    }
+    .input label {
+      display: block; /* Para que la etiqueta esté en su propia línea */
+      margin-bottom: 0.5rem;
+      font-size: 1.1em; /* Tamaño de letra para las etiquetas de los campos */
     }
     .input input {
-      padding: 0.5rem;
-      width: 100%;
+      padding: 0.8rem; /* Aumenta el padding de los inputs */
+      width: calc(100% - 1.6rem); /* Ajusta el ancho para el padding */
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1em; /* Tamaño de letra para el texto dentro del input */
+    }
+    #resultado {
+        font-size: 1.2em; /* Tamaño para el texto de resultado */
+        font-weight: bold;
+        margin-top: 1.5rem;
+        color: #007BFF;
+    }
+    ul {
+        list-style-type: disc; /* Asegura un estilo de lista visible */
+        padding-left: 20px; /* Indentación para las listas */
+    }
+    ul li {
+        margin-bottom: 0.5rem;
+    }
+    a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
     }
   </style>
 </head>
