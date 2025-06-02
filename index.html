@@ -6,53 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LegalWork - Prototipo</title>
   <style>
+    /* Estilos Generales y para PC/Laptop (Desktop First Approach) */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background: #f4f4f4;
       color: #333;
       font-size: 16px; /* Tamaño de letra base para todo el cuerpo */
+      line-height: 1.6; /* Mejora la legibilidad del texto */
     }
     header, footer {
       background-color: #004080;
       color: white;
       text-align: center;
-      padding: 1.5rem 1rem; /* Aumenta el padding para más espacio */
+      padding: 1.5rem 1rem;
     }
     header h1 {
-      font-size: 2.8em; /* Tamaño de letra para el título principal */
-      margin-bottom: 0.5rem; /* Espacio debajo del título */
+      font-size: 2.8em;
+      margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.6em; /* Tamaño de letra para el subtítulo */
+      font-size: 1.2em;
     }
     footer p {
-      font-size: 1.6em; /* Tamaño de letra para el texto del footer */
+      font-size: 1em;
     }
     main {
       padding: 2rem;
+      max-width: 1200px; /* Limita el ancho máximo del contenido principal */
+      margin: 0 auto; /* Centra el contenido principal */
     }
     .section {
-      margin-bottom: 2.5rem; /* Un poco más de margen inferior */
+      margin-bottom: 2.5rem;
     }
     h2 {
-      font-size: 2.5em; /* Tamaño para los títulos de sección (Menú Principal) */
+      font-size: 2em;
       margin-bottom: 1.5rem;
     }
     h3 {
-      font-size: 1.7em; /* Tamaño para los subtítulos dentro de las secciones (Chat Legal, Simulador, etc.) */
+      font-size: 1.7em;
       margin-bottom: 1rem;
     }
     .btn {
       background-color: #007BFF;
       color: white;
       border: none;
-      padding: 1rem 1.5rem; /* Aumenta el padding para botones */
-      margin: 0.7rem; /* Un poco más de margen entre botones */
+      padding: 1rem 1.5rem;
+      margin: 0.7rem;
       cursor: pointer;
       border-radius: 8px;
-      font-size: 1.5em; /* Tamaño de letra para los botones */
-      transition: background-color 0.3s ease; /* Transición suave para el hover */
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+      /* Añadido para hacer que los botones se ajusten en línea flexible */
+      display: inline-block; /* O inline-flex si quieres más control */
+      white-space: nowrap; /* Evita que el texto del botón se rompa */
     }
     .btn:hover {
       background-color: #0056b3;
@@ -60,42 +67,41 @@
     .chat-box, .simulador, .modelos, .premium {
       display: none;
       background: white;
-      padding: 2rem; /* Aumenta el padding para las cajas de contenido */
+      padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra un poco más pronunciada */
-      line-height: 1.6; /* Mejora la legibilidad del texto aumentando el interlineado */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .chat-box p, .modelos li, .premium p, .premium ul {
-      font-size: 1.1em; /* Tamaño de letra para el contenido de texto */
+      font-size: 1.1em;
       margin-bottom: 0.8rem;
     }
     .chat-box strong {
-        font-size: 1.05em; /* Ligeramente más grande para el texto en negrita */
+        font-size: 1.05em;
     }
     .input {
-      margin-bottom: 1.2rem; /* Espacio entre los campos de entrada */
+      margin-bottom: 1.2rem;
     }
     .input label {
-      display: block; /* Para que la etiqueta esté en su propia línea */
+      display: block;
       margin-bottom: 0.5rem;
-      font-size: 1.1em; /* Tamaño de letra para las etiquetas de los campos */
+      font-size: 1.1em;
     }
     .input input {
-      padding: 0.8rem; /* Aumenta el padding de los inputs */
+      padding: 0.8rem;
       width: calc(100% - 1.6rem); /* Ajusta el ancho para el padding */
       border: 1px solid #ddd;
       border-radius: 4px;
-      font-size: 1em; /* Tamaño de letra para el texto dentro del input */
+      font-size: 1em;
     }
     #resultado {
-        font-size: 1.2em; /* Tamaño para el texto de resultado */
+        font-size: 1.2em;
         font-weight: bold;
         margin-top: 1.5rem;
         color: #007BFF;
     }
     ul {
-        list-style-type: disc; /* Asegura un estilo de lista visible */
-        padding-left: 20px; /* Indentación para las listas */
+        list-style-type: disc;
+        padding-left: 20px;
     }
     ul li {
         margin-bottom: 0.5rem;
@@ -107,6 +113,111 @@
     a:hover {
         text-decoration: underline;
     }
+
+    /* Media Queries para Tablets (entre 768px y 1024px) */
+    @media (max-width: 1024px) {
+      body {
+        font-size: 15px; /* Ligeramente más pequeño para tablets */
+      }
+      header h1 {
+        font-size: 2.5em;
+      }
+      header p {
+        font-size: 1.1em;
+      }
+      main {
+        padding: 1.5rem; /* Menos padding en los lados */
+      }
+      .btn {
+        font-size: 1em;
+        padding: 0.8rem 1.2rem;
+        margin: 0.5rem;
+      }
+      h2 {
+        font-size: 1.8em;
+      }
+      h3 {
+        font-size: 1.5em;
+      }
+      .chat-box, .simulador, .modelos, .premium {
+        padding: 1.5rem;
+      }
+      .chat-box p, .modelos li, .premium p, .premium ul, .input label {
+        font-size: 1em;
+      }
+    }
+
+    /* Media Queries para Teléfonos (hasta 767px) */
+    @media (max-width: 767px) {
+      body {
+        font-size: 14px; /* Aún más pequeño para teléfonos */
+      }
+      header h1 {
+        font-size: 2em; /* Título más pequeño en teléfonos */
+      }
+      header p {
+        font-size: 1em;
+      }
+      main {
+        padding: 1rem; /* Padding más ajustado en teléfonos */
+      }
+      .section {
+        margin-bottom: 1.5rem;
+      }
+      h2 {
+        font-size: 1.6em;
+        text-align: center; /* Centrar el título del menú */
+      }
+      .btn {
+        display: block; /* Cada botón en su propia línea */
+        width: calc(100% - 1.4rem); /* Ocupa casi todo el ancho disponible */
+        margin: 0.5rem auto; /* Centra los botones */
+        font-size: 1em;
+        padding: 0.8rem 1rem;
+      }
+      .chat-box, .simulador, .modelos, .premium {
+        padding: 1rem;
+      }
+      .chat-box p, .modelos li, .premium p, .premium ul, .input label {
+        font-size: 0.95em; /* Texto un poco más compacto */
+      }
+      .input input {
+        width: calc(100% - 1.6rem); /* Ajusta nuevamente por si acaso */
+      }
+      #resultado {
+        font-size: 1.1em;
+      }
+      footer {
+        padding: 1rem 0.5rem; /* Menos padding en el footer para pantallas pequeñas */
+      }
+      footer p {
+        font-size: 0.9em;
+      }
+    }
+
+    /* Media Query adicional para pantallas muy pequeñas (por ejemplo, iPhone 5/SE) */
+    @media (max-width: 375px) {
+      body {
+        font-size: 13px;
+      }
+      header h1 {
+        font-size: 1.8em;
+      }
+      header p {
+        font-size: 0.9em;
+      }
+      .btn {
+        font-size: 0.9em;
+        padding: 0.7rem 0.8rem;
+      }
+      .chat-box, .simulador, .modelos, .premium {
+        padding: 0.8rem;
+      }
+      .chat-box p, .modelos li, .premium p, .premium ul, .input label {
+        font-size: 0.9em;
+      }
+    }
+
   </style>
 </head>
 <body>
